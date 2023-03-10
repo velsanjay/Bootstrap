@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App ">
-      <div className='first'>
+    <div className="App col-lg-12 col-md-12 col-sm-12">
+      <div className='first '>
         <Detail
           storage="5GB Storage"
           top="FREE"
@@ -66,3 +66,14 @@ function Detail(props) {
   );
 }
 
+let x=document.querySelectorAll('span');
+
+for(let i of x){
+  // i.style.color="gray"
+  if(i.innerText=="❌"){
+    let p=i.parentElement
+    p.className="some"
+    console.log(i);
+    }
+  console.log(i)
+}
