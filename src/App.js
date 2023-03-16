@@ -12,6 +12,8 @@ function App() {
           right="✔"
           right1="❌"
           right3="❌"
+          oppo="0.5"
+          oppo1="0.5"
           user="Single User"
         />
 
@@ -22,6 +24,8 @@ function App() {
           storage="50GB Storage"
           right="✔"
           right3="✔"
+          oppo="1"
+          oppo1="0.5"
           user1="5 User"
           top="PLUS"
           middle="$9"
@@ -35,6 +39,8 @@ function App() {
           right3="✔"
           user1="Unlimited Users"
           top="PRO"
+          oppo="1"
+          oppo1="1"
           middle="$49"
           limit="Unlimited"
         />
@@ -57,23 +63,11 @@ function Detail(props) {
       <p><span>{props.right}</span> {props.storage}</p>
       <p><span>{props.right}</span> Unlimited Public Project</p>
       <p><span>{props.right}</span> Community Access</p>
-      <p><span>{props.right3}</span> Unlimited Private Project</p>
-      <p><span className='x '>{props.right3}</span> Dedicated Phone Support</p>
-      <p><span className='x '>{props.right3}</span> <b>{props.limit}</b> Free Subdomains</p>
-      <p ><span className='x'>{props.right1}</span> Monthly Status Reports</p>
+      <p style={{opacity:props.oppo}}><span>{props.right3}</span> Unlimited Private Project</p>
+      <p style={{opacity:props.oppo}}><span className='x '>{props.right3}</span> Dedicated Phone Support</p>
+      <p style={{opacity:props.oppo}}><span className='x '>{props.right3}</span> <b>{props.limit}</b> Free Subdomains</p>
+      <p  style={{opacity:props.oppo1}}><span className='x'>{props.right1}</span> Monthly Status Reports</p>
       <button>Submit</button>
     </div>
   );
-}
-
-let x=document.querySelectorAll('span');
-
-for(let i of x){
-  // i.style.color="gray"
-  if(i.innerText=="❌"){
-    let p=i.parentElement
-    p.className="some"
-    console.log(i);
-    }
-  console.log(i)
 }
